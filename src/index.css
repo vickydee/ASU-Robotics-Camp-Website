@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", sans-serif;
+  --font-sans: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+  --font-display: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
 
   --color-asu-maroon: #8C1D40;
   --color-asu-gold: #FFC627;
@@ -11,10 +10,27 @@
   --color-asu-grey-50: #F3F4F6;
   --color-asu-grey-100: #E5E7EB;
   --color-asu-grey-200: #D1D5DB;
+  --color-asu-grey-300: #9CA3AF;
+  --color-asu-grey-400: #6B7280;
+  --color-asu-grey-500: #5B6472;
   --color-asu-grey-600: #4B5563;
+  --color-asu-grey-700: #374151;
+  --color-asu-grey-800: #1F2937;
   --color-asu-grey-900: #111827;
   
   --color-asu-green: #059669;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @layer base {
@@ -33,4 +49,649 @@
 
 .asu-button-outline {
   @apply bg-white text-asu-maroon border border-asu-grey-200 px-6 py-3 rounded-md font-bold hover:bg-asu-grey-50 transition-colors;
+}
+
+.asu-emulated-header {
+  background: #fff;
+  color: #191919;
+  font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+  position: relative;
+  z-index: 50;
+}
+
+.asu-emulated-header *,
+.asu-emulated-header *::before,
+.asu-emulated-header *::after {
+  box-sizing: border-box;
+}
+
+.asu-emulated-header a,
+.asu-emulated-header button {
+  text-decoration: none;
+}
+
+.asu-emulated-header a:focus,
+.asu-emulated-header button:focus {
+  box-shadow: 0 0 0 2px #ffc627, 0 0 0 4px #191919 !important;
+  outline: none !important;
+}
+
+.asu-container-xl {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1224px;
+  width: 100%;
+}
+
+.asu-universal-nav {
+  background-color: #e8e8e8;
+  padding: 0.5rem 0;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
+}
+
+.asu-universal-nav .asu-container-xl,
+.asu-header-main .asu-container-xl {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.asu-header-top,
+.asu-universal-links {
+  height: 100%;
+}
+
+.asu-universal-links {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.asu-universal-link {
+  align-items: center;
+  color: #191919;
+  display: flex;
+  font-size: 0.75rem;
+  gap: 0.35rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.asu-universal-link:hover {
+  color: #191919;
+  text-decoration: underline;
+}
+
+.asu-header-main {
+  background-color: #fff;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 0;
+}
+
+.asu-navbar {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+}
+
+.asu-navbar-brand {
+  display: unset;
+  font-size: unset;
+  line-height: unset;
+  margin: 0;
+  padding: 0;
+  white-space: unset;
+}
+
+.asu-navbar-brand img {
+  display: block;
+  height: 72px;
+  margin: 20px 1rem 20px 0;
+  width: auto;
+}
+
+.asu-navbar-toggler {
+  display: none;
+}
+
+.asu-expand-title {
+  width: 100%;
+}
+
+.asu-title {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+  width: max-content;
+}
+
+.asu-unit-name,
+.asu-subunit-name {
+  color: #191919;
+  text-decoration: none;
+}
+
+.asu-unit-name {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.asu-subunit-name {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.asu-unit-name:hover,
+.asu-subunit-name:hover {
+  color: #191919;
+  text-decoration: underline;
+}
+
+.asu-primary-nav {
+  white-space: nowrap;
+}
+
+.asu-primary-nav-content {
+  align-items: center;
+  border: none;
+  color: inherit;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+  margin: inherit;
+}
+
+.asu-main-nav-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.asu-main-nav-item {
+  margin: 0 0.5rem 0 0;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+}
+
+.asu-main-nav-link {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #191919;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  line-height: 1rem;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  text-align: left;
+}
+
+.asu-main-nav-link::after {
+  background-image: linear-gradient(to right, transparent 0.5%, #ffc627 0.5%);
+  content: "";
+  display: block;
+  height: 0.5rem;
+  position: relative;
+  right: 12px;
+  top: 0.6rem;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
+  width: 0;
+}
+
+.asu-main-nav-item:hover > .asu-main-nav-link::after,
+.asu-main-nav-link-selected::after {
+  width: calc(100% + 24px);
+}
+
+.asu-main-nav-link:hover,
+.asu-main-nav-link:visited {
+  color: #191919;
+}
+
+.asu-mobile-universal-links {
+  display: none;
+}
+
+@media (max-width: 1260px) {
+  .asu-container-xl {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .asu-universal-nav {
+    display: none;
+  }
+
+  .asu-header-main .asu-container-xl {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .asu-navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.5rem 0 0;
+  }
+
+  .asu-navbar-brand {
+    margin: 0;
+    padding: 0;
+  }
+
+  .asu-navbar-brand img {
+    height: 32px;
+    margin: 0 0 1rem 2rem;
+  }
+
+  .asu-navbar-toggler {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #191919;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 2rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .asu-expand-title {
+    width: 100%;
+  }
+
+  .asu-title {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin: 0;
+    padding: 0 2rem 1.5rem;
+    width: auto;
+  }
+
+  .asu-unit-name {
+    display: none;
+  }
+
+  .asu-subunit-name {
+    font-size: 1rem;
+  }
+
+  .asu-primary-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .asu-primary-nav-open {
+    display: block;
+  }
+
+  .asu-primary-nav-content {
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: calc(100vh - 277px);
+    min-height: calc(100vh - 277px);
+    overflow-y: auto;
+  }
+
+  .asu-main-nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .asu-main-nav-item {
+    border-bottom: 1px solid #bfbfbf;
+    margin: 0;
+  }
+
+  .asu-main-nav-item:first-child {
+    border-top: 1px solid #bfbfbf;
+  }
+
+  .asu-main-nav-link {
+    padding: 1rem 2rem 0.75rem;
+    width: 100%;
+  }
+
+  .asu-main-nav-link::after {
+    right: 0;
+    top: 0.8rem;
+  }
+
+  .asu-main-nav-link-selected::after,
+  .asu-main-nav-item:hover > .asu-main-nav-link::after {
+    width: 100%;
+  }
+
+  .asu-mobile-universal-links {
+    background: #e8e8e8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.asu-site-footer {
+  font-family: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
+}
+
+.asu-footer-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1224px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+}
+
+.asu-footer-endorsed,
+.asu-footer-columns {
+  background: #1e1e1e;
+}
+
+.asu-footer-columns {
+  border-top: 2px solid #393939;
+}
+
+.asu-footer-endorsed-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.asu-footer-endorsed-logo {
+  align-items: center;
+  display: flex;
+}
+
+.asu-footer-endorsed-logo img {
+  height: auto;
+  max-height: 8rem;
+  transform: scale(1.08);
+  transform-origin: left center;
+  width: auto;
+}
+
+.asu-footer-social {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.asu-footer-social a {
+  color: #bfbfbf;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.asu-footer-social a:last-child {
+  padding-right: 0;
+}
+
+.asu-footer-social a:hover {
+  color: #ffc627;
+}
+
+.asu-footer-columns-row {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+.asu-footer-info {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.asu-footer-info h2,
+.asu-footer-link-columns h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+  line-height: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.asu-footer-info p {
+  color: #e8e8e8;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.asu-footer-contact-link {
+  color: #e8e8e8;
+  display: inline-block;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
+.asu-footer-contact-link:hover {
+  color: #ffc627;
+  text-decoration: underline;
+}
+
+.asu-footer-support-button {
+  background-color: #ffc627;
+  border: 1px solid #ffc627;
+  border-radius: 400rem;
+  color: #191919;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 30ms ease-in-out;
+}
+
+.asu-footer-support-button:hover {
+  color: #191919;
+  transform: scale(1.05);
+}
+
+.asu-footer-link-columns {
+  display: grid;
+  flex: 1;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.asu-footer-link-columns section {
+  display: flex;
+  flex-direction: column;
+}
+
+.asu-footer-link-columns a,
+.asu-footer-link-columns button,
+.asu-footer-link-columns span {
+  background: transparent;
+  border: 0;
+  color: #e8e8e8;
+  display: block;
+  font: inherit;
+  line-height: 1.5rem;
+  padding: 0 0 1rem;
+  text-align: left;
+  text-decoration: none;
+}
+
+.asu-footer-link-columns button {
+  cursor: pointer;
+}
+
+.asu-footer-link-columns a:hover,
+.asu-footer-link-columns button:hover {
+  color: #ffc627;
+  text-decoration: underline;
+}
+
+.asu-footer-innovation {
+  background: #ffc627;
+}
+
+.asu-footer-innovation-row {
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.asu-footer-innovation nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.asu-footer-innovation a {
+  color: #191919;
+  text-decoration: none;
+}
+
+.asu-footer-innovation a:hover {
+  color: #191919;
+  text-decoration: underline;
+}
+
+.asu-footer-ranking-link {
+  border: 2px solid #191919;
+  border-radius: 400rem;
+  margin-left: 1.5rem;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.asu-footer-colophon {
+  background: #e8e8e8;
+}
+
+.asu-footer-colophon .asu-footer-container {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.asu-footer-colophon nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.asu-footer-colophon a,
+.asu-footer-colophon button {
+  background: transparent;
+  border: 0;
+  color: #191919;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0;
+  text-decoration: none;
+}
+
+.asu-footer-colophon a:hover,
+.asu-footer-colophon button:hover {
+  color: #191919;
+  text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+  .asu-footer-endorsed-row,
+  .asu-footer-columns-row,
+  .asu-footer-innovation-row {
+    flex-direction: column;
+  }
+
+  .asu-footer-social {
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .asu-footer-social a:first-child {
+    padding-left: 0;
+  }
+
+  .asu-footer-info {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .asu-footer-link-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .asu-footer-innovation nav {
+    display: grid;
+    gap: 0;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    justify-items: start;
+    width: 100%;
+  }
+
+  .asu-footer-innovation nav a {
+    padding: 0.5rem 0;
+  }
+
+  .asu-footer-ranking-link {
+    margin-left: 0;
+    margin-top: 1rem;
+    white-space: normal;
+  }
+
+  .asu-footer-colophon nav {
+    display: grid;
+    gap: 0;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto);
+    justify-items: start;
+    width: 100%;
+  }
+
+  .asu-footer-colophon a,
+  .asu-footer-colophon button {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .asu-footer-endorsed-logo img {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .asu-footer-innovation nav,
+  .asu-footer-colophon nav {
+    display: flex;
+    flex-direction: column;
+  }
 }
